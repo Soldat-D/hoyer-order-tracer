@@ -1,0 +1,27 @@
+<!--pages/InformationQuery/RecentJob/JobDetail/index.wxml-->
+<view class="container">
+    <include src='/pages/Header/hoyer-header.wxml' />
+    <include src="/common_html/base_info_blue.wxml" />
+
+    <scroll-view scroll-y="true" style="height:{{scrollview_height}}px">
+        <view wx:for="{{nodes}}" wx:key="index">
+            <view class="item-container" style='background-color:{{item.is_complete?"#03a9f4":"#6acffd"}}'>
+                <view class='item-title'>{{item.event}}</view>
+                <view class='item-content-txt' wx:if='{{item.driver_name.length != 0}}'>驾驶员姓名：{{item.driver_name}}</view>
+                <view class='item-content-txt' wx:if='{{item.driver_no.length != 0}}'>驾驶员手机号：{{item.driver_no}}</view>
+                <view class='item-content-txt'>计划时间：{{item.plan_time}}</view>
+                <view class='item-content-txt' wx:if="{{item.actual_time.length>0}}">实际时间：{{item.actual_time}}</view>
+                <view class='item-link' wx:if="{{item.show_pics_btn==true}}" bindtap='showPictures' data-index='{{index}}'>
+                    <span class="item-link2">查看照片</span>
+                </view>
+
+                <view class="gallery" wx:if="{{item.show_pics}}">
+                    <view class="img-item" wx:for="{{item.pics}}" wx:key="index">
+                        <image style="width:{{imageWidth}}px; height:{{imageWidth}}px" src="{{item}}" bindtap="previewImage" mode="aspectFill" data-imgindex='{{item}}'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+
+</view>

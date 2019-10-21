@@ -1,0 +1,28 @@
+.plan-base-info{
+  display: flex;
+  /* margin: 5rpx 20rpx 20rpx; */
+  flex-direction: column;
+  background-color: #88c34a;
+  color: #fff;
+  padding: 16rpx 16rpx 8rpx 16rpx;
+  border-radius: 0rpx;
+  /* box-shadow: 0 0 10rpx #88c34a; */
+  font-size: 32rpx;
+}
+
+.plan-info-detail-row{
+  display: flex;
+  flex-direction: row;
+  /* padding-right: 15rpx; */
+}
+
+.text-no-endline{
+  white-space: nowrap;
+}
+
+.arrow{
+  width: 35rpx;
+  height: 38rpx;
+  margin-left: 50%;
+  transform: translate(-50%);
+}

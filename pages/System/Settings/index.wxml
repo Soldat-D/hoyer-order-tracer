@@ -1,0 +1,34 @@
+<!--pages/System/Settings/index.wxml-->
+<include src='/pages/Header/hoyer-header.wxml'></include>
+<view class="container">
+
+    <view class="alert-red"  wx:if="{{alert.length != 0}}">{{alert}}</view>
+
+    <view class="panel">
+        <view class="title">业务</view>
+        <view class="tag-container">
+            <span class="tag-border-green" wx:for="{{myInfo}}" wx:key>{{item.name}}：{{item.value}}</span>
+        </view>
+    </view>
+
+    <view class="panel">
+        <view class="title">GPS</view>
+        <view class="tag-container">
+            <span class="tag-border-green" wx:for="{{gpsInfo}}" wx:key>{{item.name}}：{{item.value}}</span>
+        </view>
+    </view>
+
+    <view class="panel">
+        <view class="title">系统信息</view>
+        <view class="tag-container">
+            <span class="tag-border-green" wx:for="{{systemInfo}}" wx:key>{{item.name}}：{{item.value}}</span>
+        </view>
+    </view>
+
+    <view class="panel">
+        <view class="title">日期和时间</view>
+        <view class="tag-container">
+            <span class="tag-border-green">{{time}}</span>
+        </view>
+    </view>
+</view>

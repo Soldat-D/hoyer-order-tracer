@@ -1,0 +1,58 @@
+<!--pages/JobTracing/JobOperation/index.wxml-->
+<!--index.wxml-->
+<view class="container">
+    <include src='/pages/Header/hoyer-header.wxml' />
+    <include src="/common_html/base_info.wxml" />
+
+
+    <scroll-view scroll-y="true" style="height:{{scrollview_height}}px">
+
+        <view wx:for="{{nodes}}" wx:key="index">
+            <view class="item-container" style='background-color:{{item.show_buttons?"#88c34a":"#88c34a"}}'>
+                <view class='item-title'>{{item.event}}</view>
+                <view class='item-content-txt'>计划时间：{{item.plan_time}}</view>
+                <view class='item-content-txt' wx:if="{{item.actual_time.length>0}}">实际时间：{{item.actual_time}}</view>
+                <view class='item-link' wx:if="{{item.show_buttons==false && item.show_pics_btn==true}}" bindtap='showPictures' data-index='{{index}}'>
+                    <span class="item-link2">查看照片</span>
+                </view>
+
+                <view wx:if='{{is1369 && item.node_name=="end_unload" && item.actual_time.length==0}}'>
+                    <!-- <view wx:if='{{true}}'> -->
+
+                    <view class='gallery-row'>
+                        <view>
+                            <image class="img-item" style="width:{{imageWidth}}px; height:{{imageWidth}}px" src='{{receipt_img}}' bindtap='selectPicture' data-value='2' data-index='{{index}}'></image>
+                            <view class='gallery-label'>签收单</view>
+                        </view>
+                        <view>
+                            <image class="img-item" style="width:{{imageWidth}}px; height:{{imageWidth}}px" src='{{unload_check_img}}' bindtap='selectPicture' data-value='3' data-index='{{index}}'></image>
+                            <view class='gallery-label'>卸货检查表</view>
+                        </view>
+                        <view>
+                            <image class="img-item" style="width:{{imageWidth}}px; height:{{imageWidth}}px" src='{{weight_img}}' bindtap='selectPicture' data-value='4' data-index='{{index}}'></image>
+                            <view class='gallery-label'>磅单</view>
+                        </view>
+                        <view>
+                            <image class="img-item" style="width:{{imageWidth}}px; height:{{imageWidth}}px" src='{{temp_rec_img}}' bindtap='selectPicture' data-value='5' data-index='{{index}}'></image>
+                            <view class='gallery-label'>温度记录表</view>
+                        </view>
+                    </view>
+                </view>
+
+                <view wx:else>
+                    <view class="gallery" wx:if="{{item.show_pics}}">
+                        <view class="img-item" wx:for="{{item.pics}}" wx:key="index">
+                            <image style="width:{{imageWidth}}px; height:{{imageWidth}}px" src="{{item}}" bindtap="previewImage" mode="aspectFill" data-index='{{index}}'></image>
+                        </view>
+                    </view>
+                </view>
+
+                <view class='item-btns-row-container' wx:if="{{item.show_buttons}}">
+                    <button class='item-row-btn' bindtap='selectPicture' data-index='{{index}}' disabled='{{is1369 && item.node_name=="end_unload"}}' data-value='1'>添加照片</button>
+                    <button class='item-row-btn' bindtap='submitData' data-index='{{index}}'>{{item.event}}</button>
+                </view>
+
+            </view>
+        </view>
+    </scroll-view>
+</view>

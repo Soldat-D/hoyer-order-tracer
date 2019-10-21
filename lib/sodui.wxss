@@ -1,0 +1,60 @@
+/* color */
+.primary{
+    background-color: #039af4 !important;
+}
+.success{
+    background-color: #88c34a !important;
+}
+.warn{
+    background-color: orange !important;
+}
+.error{
+    background-color: #e40012 !important;
+}
+/* font */
+.title-big{font-size: 48rpx;}
+.title-normal{font-size: 32rpx;}
+.text{font-size: 28rpx; color: #757575;}
+.text-small{font-size: 24rpx;}
+
+/* button */
+.button {
+    color: #fff; /*字体颜色*/
+    margin-left: 16rpx;
+    margin-right: 16rpx;
+    background-color: #e40012;
+    margin-top: 100rpx;
+    border-radius: 0rpx;
+    font-size: 32rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    flex: 1;
+}
+
+.button[disabled] {
+    border-radius: 0rpx !important;
+    opacity: 0.2 !important;
+    color: #fff !important;
+    background-color: gray !important;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pannel{
+    margin:16rpx 16rpx;
+    padding:16rpx 16rpx;
+    background-color: white;
+    color: #757575;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 0 5rpx #ccc;
+}

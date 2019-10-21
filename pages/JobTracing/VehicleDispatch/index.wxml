@@ -1,0 +1,103 @@
+<!--pages/JobTracing/VehicleDispatch/index.wxml-->
+<view>
+    <include src='/pages/Header/hoyer-header.wxml' />
+    <include src="/common_html/base_info.wxml" />
+
+    <scroll-view scroll-y="true" style='height:{{mainScrollViewHeight}}px;'>
+        <view class="container">
+            <!-- 驾驶员信息 -->
+            <view class='col-item'>
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/driver.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{driver_name_1}}' placeholder="驾驶员姓名" bindinput="inputDriverName" />
+                    <text class="error-tips">{{errorDriverTips}}</text>
+                    <view class='must-input-item-tip'>*</view>
+                </view>
+
+                <!-- 司机下拉框 -->
+                <view class='drop-box' wx:if="{{drivers.length > 0}}">
+                    <scroll-view style='max-height:300rpx;' scroll-y="true">
+                        <view class='drop-box-item' wx:for="{{drivers}}" wx:key="" bindtap='selectDriver' data-index='{{index}}'>
+                            <view>{{item.name}}</view>
+                            <view>{{item.tel}}</view>
+                        </view>
+                    </scroll-view>
+                </view>
+
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/phone-number.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{driver_no_1}}' placeholder='驾驶员手机号' bindinput="inputDriverTel" type='number' />
+                    <text class="error-tips">{{errorPhoneNumTips}}</text>
+                    <view class='must-input-item-tip'>*</view>
+                </view>
+
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/user-id.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{driver_id_1}}' placeholder="驾驶员身份证号" bindinput="inputDriverID" />
+                    <text class='error-tips'>{{errorDriverIDTip}}</text>
+                </view>
+            </view>
+
+            <!-- 车辆信息 -->
+            <view class='col-item'>
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/plate-no.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{plate_no_1}}' placeholder="车牌号" bindinput="inputCarNo" />
+                    <text class="error-tips">{{errorPlateNoTips}}</text>
+                    <view class='must-input-item-tip'>*</view>
+                </view>
+
+                <!-- 车辆下拉框 -->
+                <view class='drop-box' wx:if="{{trucks.length > 0}}">
+                    <scroll-view style='max-height:250rpx;' scroll-y="true">
+                        <view class='drop-box-item' wx:for="{{trucks}}" wx:key="" bindtap='selectPlateNo' data-index='{{index}}'>
+                            <view>{{item.value}}</view>
+                            <!-- <view>{{item.tel}}</view> -->
+                        </view>
+                    </scroll-view>
+                </view>
+
+
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/board.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{board_no}}' placeholder="挂板号" bindinput="inputBoardNo" />
+                </view>
+            </view>
+
+            <view class='add-panel-btn' wx:if="{{!showSupercargoPanel}}" bindtap='showSupercargoPanel'>添加押运员信息</view>
+
+            <!-- 押运员信息 -->
+            <view class='col-item' wx:if="{{showSupercargoPanel}}">
+                <image class='cancel-btn' src='/images/cancel.png' bindtap='closeSupercargoPanel'></image>
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/supercargo.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{supercargo_name}}' placeholder="押运员姓名" bindinput="inputSupercargoName" />
+                </view>
+
+                <!-- 司机下拉框 -->
+                <view class='drop-box' wx:if="{{supercargos.length > 0}}">
+                    <scroll-view style='max-height:250rpx;' scroll-y="true">
+                        <view class='drop-box-item' wx:for="{{supercargos}}" wx:key="" bindtap='selectSupercargo' data-index='{{index}}'>
+                            <view>{{item.name}}</view>
+                            <view>{{item.tel}}</view>
+                        </view>
+
+                    </scroll-view>
+                </view>
+
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/phone-number.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{supercargo_tel}}' placeholder="押运员手机号" bindinput="inputSupercargoTel" type='number' />
+                </view>
+
+                <view class="row-item">
+                    <image class="row-item-icon" src="/images/icons/user-id.png" />
+                    <input placeholder-class="input-placeholder" class="input-wgt" value='{{supercargo_id}}' placeholder="押运员身份证号" bindinput="inputSupercargoID" />
+                    <text class='error-tips'>{{errorSupercargoIDTip}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+
+    <button class='button button-submit' bindtap='bindGPSDevice'>确定派车</button>
+</view>

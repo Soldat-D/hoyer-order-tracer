@@ -1,0 +1,3 @@
+/* pages/ToolsPage/PreviewImage/PreviewImage.wxss */
+@import "../../../lib/colorui.wxss";
+@import "../../../lib/icon.wxss";

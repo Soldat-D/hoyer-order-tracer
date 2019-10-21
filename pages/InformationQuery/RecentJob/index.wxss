@@ -1,0 +1,137 @@
+/* pages/InformationQuery/RecentJob/index.wxss */
+.item-col {
+    display: flex;
+    flex-direction: column;
+    padding: 16rpx;
+    background-color: white;
+    margin: 8rpx 16rpx 8rpx 16rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.item-col:active {
+    background-color: #e0e0e0;
+}
+
+.item-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rpx 10rpx;
+}
+
+.item-title {
+    font-size: 32rpx;
+    color: #03a9f4;
+    font-weight: bold;
+}
+
+.item-subtitle {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.map-search {
+    height: 92rpx;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5rpx 20rpx 5rpx 0rpx;
+    background-color: #e0e0e0;
+}
+
+.map-search-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    background-color: white;
+    border-radius: 8rpx;
+    padding: 0rpx 10rpx;
+}
+
+.map-search-icon {
+    width: 41rpx;
+    height: 41rpx;
+    margin-left: 10rpx;
+    margin-right: 20rpx;
+}
+
+.map-search-input {
+    height: 70rpx;
+    flex: 1;
+    line-height: 70rpx;
+    font-size: 30rpx;
+    margin-left: 10rpx;
+}
+
+.scroll-view {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 100rpx; */
+}
+
+.no-result-tips {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 28rpx;
+    color: grey;
+    padding: 20rpx;
+    /* margin-top: 100rpx; */
+}
+
+.item-info {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    /* justify-content: center; */
+    align-content: center;
+}
+
+.item-subinfo {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-content: center;
+}
+
+.item-plate {
+    font-size: 25rpx;
+    background-color: #ffc107;
+    color: black;
+    text-align: center;
+    line-height: 40rpx;
+    padding: 2rpx 5rpx 2rpx 5rpx;
+    border: 3rpx solid black;
+    border-radius: 4rpx;
+}
+
+
+.picker-container{
+    display: flex;
+    margin-top:100rpx;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #e0e0e0;
+    font-size: 28rpx;
+    padding: 10rpx 16rpx 10rpx 16rpx;
+}
+
+.picker{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: white;
+}

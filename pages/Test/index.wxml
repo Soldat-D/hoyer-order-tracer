@@ -1,0 +1,14 @@
+<include src='/pages/Header/hoyer-header.wxml' />
+<view class="tab-container">
+    <view class="{{curTab == 0? 'tab-current':'tab'}}" bindtap="tabSelect" data-id="0">派车</view>
+    <view class="{{curTab == 1? 'tab-current':'tab'}}" bindtap="tabSelect" data-id="1">业务信息</view>
+</view>
+
+<view wx:if="{{curTab == 0}}">
+    <!-- 派车 -->
+</view>
+
+<view class="job-info-container" wx:if="{{curTab == 1}}">
+    <!-- 业务信息 -->
+    <view class="text-bar"><text>业务编号：HSB083193HSB083193HSB083193HSB083193HSB083193HSB08319</text></view>
+</view>

@@ -1,0 +1,40 @@
+<view class='plan-base-info' bindtap='showAll'>
+    <view class='plan-info-detail-row'>
+        <text class='text-no-endline'>业务编号：</text>
+        <text>{{hsb_ref}}</text>
+    </view>
+    <view class='plan-info-detail-row'>
+        <text class='text-no-endline'>产品名称：</text>
+        <text>{{cargo_name}}</text>
+    </view>
+    <view class="plan-info-detail-row">
+        <text class='text-no-endline'>车队名称：</text>
+        <text>{{trucker_name}}</text>
+    </view>
+
+
+    <view wx:if="{{!isFold}}">
+        <view class="plan-info-detail-row">
+            <text class='text-no-endline'>装货地址：</text>
+            <text>{{load_add}}</text>
+        </view>
+        <view class="plan-info-detail-row">
+            <text class='text-no-endline'>卸货地址：</text>
+            <text>{{unload_add}}</text>
+        </view>
+        <view class="plan-info-detail-row">
+            <text class='text-no-endline'>司机姓名：</text>
+            <text>{{driver_name}}</text>
+        </view>
+        <view class="plan-info-detail-row">
+            <text class='text-no-endline'>司机手机号：</text>
+            <text>{{driver_no}}</text>
+        </view>
+        <view class="plan-info-detail-row">
+            <text class='text-no-endline'>车辆信息：</text>
+            <text>{{plate_no}}</text>
+        </view>
+
+    </view>
+    <image class="arrow" src="{{isFold?'/images/arrow-down.png':'/images/arrow-on.png'}}"></image>
+</view>

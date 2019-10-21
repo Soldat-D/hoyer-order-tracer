@@ -1,0 +1,135 @@
+<!--pages/EquipHandover/EquipHandover.wxml-->
+<!--pages/EquipmentHandover/EquipmentHandover.wxml-->
+<include src='/pages/Header/hoyer-header.wxml' />
+
+<!-- 输入箱号 -->
+<view wx:if='{{errorTankNumber}}'>
+    <view class="cu-bar bg-white search">
+        <view class='search-form radius'>
+            <text class="icon-search"></text>
+            <input type="text" placeholder="请输入箱号" confirm-type="search" value='{{tankNumber}}' bindinput='tankNumberInput'></input>
+        </view>
+        <view class='action' bindtap='cleanText'>
+            <text class='icon-close'></text>
+            <text>取消</text>
+        </view>
+    </view>
+
+    <view class='padding-sm text-right' wx:if='{{stateTips.length != 0}}'>
+        <view class="cu-capsule">
+            <view class="cu-tag bg-red">
+                <text class="icon-roundclosefill"></text>
+            </view>
+            <view class="cu-tag line-red">
+                {{stateTips}}
+            </view>
+        </view>
+    </view>
+
+    <view class='padding' wx:if='{{showHandOverBtn}}'>
+        <button class='cu-btn block bg-orange lg' bindtap='showHandOverList'>
+            <text class='icon-loading2 iconfont-spin' wx:if="{{loading}}"></text> 填写设备交接单
+        </button>
+    </view>
+</view>
+
+<!-- 箱号正确之后的设备检查项 -->
+<view wx:else>
+    <view class="VerticalBox">
+        <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{verticalNavTop}}" style="height:calc(100vh - 275rpx)">
+            <view class="cu-item {{index==tabCur?'text-yellow cur':''}}" wx:for="{{devicePostion}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+                {{item}}
+            </view>
+        </scroll-view>
+
+        <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 275rpx)">
+            <view class='padding-top padding-lr'>
+                <view class='cu-bar solid-bottom bg-white'>
+                    <view class='action'>
+                        <text class='icon-title text-orange'></text> {{currentItem.tabName}}（{{currentItem.checkItems.length}}项）</view>
+                </view>
+                <view class='cu-list menu'>
+                    <view class='cu-item'>
+                        <view class='content padding-tb-sm'>
+                            <radio-group class="block" bindchange='radioChange' wx:for='{{currentItem.checkItems}}' wx:key data-index='{{index}}'>
+                                <view class='margin-top'>
+                                    <view class="title text-bold">{{index+1}}. {{item.content}}</view>
+                                    <view class='margin-left margin-top-sm'>
+                                        <radio class="cyan" value='1' checked='{{item.value==1?true:false}}'></radio>
+                                        <text class='margin-left-xs'>是</text>
+                                        <radio class="cyan margin-left" value='-1' checked='{{item.value==-1?true:false}}'></radio>
+                                        <text class='margin-left-xs'>否</text>
+                                    </view>
+                                </view>
+                            </radio-group>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <view class="cu-bar bg-white tabbar border shop">
+        <view class="action" bindtap='previewImage'>
+            <view class="icon-pic">
+                <view class="cu-tag badge">{{currentItem.pics.length}}</view>
+            </view>
+            查看照片
+        </view>
+        <view class="bg-orange submit" bindtap='addPhotos'>添加照片</view>
+        <view class="bg-green submit" bindtap='showUploadJobDataModal'>上传设备交接单</view>
+    </view>
+</view>
+
+<view class="cu-modal {{modalName=='tipsModal'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class='content'>提示</view>
+        </view>
+        <view class='padding-xl bg-white text-lg'>
+            {{modalTips}}
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class='action'>
+                <button class='cu-btn bg-blue margin-left' bindtap='hideModal'>确定</button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="cu-modal {{modalName=='uploadJobDataModal'?'show':''}}">
+    <view class="cu-dialog">
+        <view class='padding-xl bg-white text-lg text-left'>
+            确定要将设备交接单上传到服务器吗？
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class='action'>
+                <button class='cu-btn bg-gray margin-left' bindtap='hideModal'>取消</button>
+            </view>
+            <view class='action'>
+                <button class='cu-btn bg-blue margin-left' bindtap='submitData'>确定</button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="cu-modal {{modalName=='openSettingsModal'?'show':''}}">
+    <view class="cu-dialog">
+        <view class='padding-xl bg-white text-lg text-left'>
+            {{modalTips}}
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class='action'>
+                <button class='cu-btn bg-gray margin-left' bindtap='hideModal'>取消</button>
+            </view>
+            <view class='action'>
+                <button class='cu-btn bg-olive margin-left' bindtap='openSettings'>去设置</button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+    <image src='/images/logo-round.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text'>{{loadModalTips}}</view>
+</view>

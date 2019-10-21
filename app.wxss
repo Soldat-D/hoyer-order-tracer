@@ -1,0 +1,18 @@
+/**app.wxss**/
+@import "lib/animated.wxss";
+@import 'common_html/base_info.wxss';
+@import 'common_html/base_info_blue.wxss';
+@import 'lib/sodui.wxss';
+@import 'lib/links.wxss';
+@import "/pages/Header/hoyer-header.wxss";
+
+page{
+    background: #f1f1f1;
+    font-size: 28rpx;
+    color: #333;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+
+.main-container{
+  background-color: whitesmoke;
+}

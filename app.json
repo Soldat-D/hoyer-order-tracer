@@ -1,0 +1,29 @@
+{
+    "pages": [
+        "pages/Index/index",
+        "pages/System/Settings/index",
+        "pages/InformationQuery/TankContainerCA/index",
+        "pages/InformationQuery/GPSInformation/index",
+        "pages/DeviceBinding/G7Binding/index",
+        "pages/InformationQuery/RecentJob/index",
+        "pages/InformationQuery/RecentJob/JobDetail/index",
+        "pages/AbnormalReport/index",
+        "pages/JobTracing/VehicleDispatch/index",
+        "pages/JobTracing/JobOperation/index",
+        "pages/Test/index",
+        "pages/EquipHandover/index",
+        "pages/ToolsPage/PreviewImage/PreviewImage"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#e40012",
+        "navigationBarTitleText": "HOYER运输信息系统",
+        "navigationBarTextStyle": "white"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于'车辆跟踪'"
+        }
+    },
+    "sitemapLocation": "sitemap.json"
+}

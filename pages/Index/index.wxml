@@ -1,0 +1,28 @@
+<!--pages/index/index.wxml-->
+<include src='/pages/Header/hoyer-header.wxml'></include>
+<!-- HOYER Header -->
+
+<view wx:if="{{mobile == undefined || mobile == null || mobile.length != 11 }}">
+    <view>
+        <view style="padding: 60rpx 60rpx 16rpx 60rpx; color: #757575; font-weight:bold;" >
+        <!-- decode 属性可以使用&nbsp;添加空格（注意decode="{{true}}"需要写在text标签上） -->
+            <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们需要获取您的手机号用作小程序身份认证，如果您取消授权或者拒绝授权将无法使用小程序。</text>
+        </view>
+        <view style="padding: 8rpx 32rpx;">
+            <button class="button warn" open-type='getPhoneNumber' bind:getphonenumber="getPhoneNumber">获取手机号</button>
+        </view>
+    </view>
+</view>
+
+<view class="container" wx:else>
+    <view class="weui-grids">
+        <view class="weui-grid" wx:for="{{routers}}" wx:key="name">
+            <view class='weui-grid__bg' bindtap='functionSelect' data-index='{{index}}' data-value='{{item.value}}'>
+                <view class="weui-grid__icon" style='background-color:{{item.backgroundColor}}'>
+                    <image src=" {{item.icon}}" mode="scaleToFill" />
+                </view>
+                <text class="weui-grid__label">{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>

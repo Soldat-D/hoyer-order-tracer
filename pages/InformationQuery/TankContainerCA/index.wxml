@@ -1,0 +1,28 @@
+<!--pages/InformationQuery/TankContainerCA/index.wxml-->
+<view>
+    <include src='/pages/Header/hoyer-header.wxml'></include>
+
+    <view class='cars-driver-item'>
+        <view class="search">
+            <image class="search-icon" src="/images/search.png" />
+            <input placeholder-class="input-placeholder" class="input-wgt" value="{{box_no}}" placeholder="输入箱号" auto-focus bindinput="_inputBoxNo" />
+        </view>
+        <div class="error-container">
+            <text class="error-tips">{{errorTips}}</text>
+        </div>
+    </view>
+
+    <block wx:if="{{checkboxes.length}}">
+        <view class="cb-container">
+            <view class="cb-item" wx:for="{{checkboxes}}" wx:key="{{index}}" bindtap="toggleTodoHandle" data-index="{{index}}">
+                <icon class="checkbox" type="{{item.checked?'success':'circle'}}" color="#03a9f4"></icon>
+                <text class="cb-label">{{item.value}}</text>
+            </view>
+        </view>
+    </block>
+
+
+    <!-- <view class="send"> -->
+    <button class='button primary' bindtap='_sendBoxCert' disabled="{{disabled}}">发送至邮箱</button>
+    <!-- </view> -->
+</view>

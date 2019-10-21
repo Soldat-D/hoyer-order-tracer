@@ -1,0 +1,5 @@
+<view class="header-container" >
+    <image class="hoyer-header" src="/images/hoyer-header.jpg"></image>
+    <!-- <text class='hoyer-header-version' bindlongpress="enterSettings">v2.1.0</text> -->
+    <navigator class='hoyer-header-version' url="/pages/System/Settings/index">v2.1.1</navigator>
+</view>

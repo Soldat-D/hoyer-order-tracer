@@ -1,0 +1,13 @@
+<!--pages/ToolsPage/PreviewImage/PreviewImage.wxml-->
+<include src='/pages/Header/hoyer-header.wxml' />
+<view class="cu-bar bg-white solid-bottom">
+    <view class='action'>
+        <text class='icon-title text-mauve'></text>点击查看大图(原图)
+    </view>
+</view>
+<view class="cu-form-group">
+    <view class="grid col-3 grid-square flex-sub">
+        <view class="padding-xs bg-img" wx:for='{{images}}' wx:key style="background-image:url({{item.imgThumbUrl}});" bindtap='previewImage' data-value='{{item.imgUrl}}'>
+        </view>
+    </view>
+</view>

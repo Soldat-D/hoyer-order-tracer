@@ -1,0 +1,54 @@
+/* pages/test/test.wxss */
+
+.tab-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #757575;
+}
+
+.tab {
+    display: flex;
+    flex: 1;
+    border-bottom: solid 4rpx white;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-current {
+    display: flex;
+    flex: 1;
+    border-bottom: solid 4rpx orange;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+}
+
+.job-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.text-bar {
+    background-color: white;
+    min-height: 100rpx;
+    font-weight: bold;
+    margin-top: 30rpx;
+    line-height: 100rpx;
+    color: #757575;
+    padding-left: 30rpx;
+}
+
+text{
+    word-wrap: break-word;
+    word-break: normal;
+}

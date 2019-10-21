@@ -1,0 +1,143 @@
+/* pages/JobTracing/VehicleDispatch/index.wxss */
+.cars-driver-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 10rpx;
+  background-color: white;
+}
+
+.col-item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx #ccc;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1;
+  height: 25rpx;
+}
+
+.error-tips {
+  font-size: 0.8rem;
+  margin-right: 10rpx;
+  color: rgba(255, 0, 0, 1);
+}
+
+icon {
+  display: inline-block;
+  font-size: 0;
+}
+
+.row-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background-color: transparent;
+}
+
+.row-item .row-item-icon {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+
+.row-item .input-wgt {
+  flex: 1;
+  font-size: 28rpx;
+  color: black;
+  border-radius: 10rpx;
+}
+
+.row-item .input-placeholder {
+  flex: 1;
+  font-size: 28rpx;
+  color: #757575;
+  border-radius: 10rpx;
+}
+
+.send {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20rpx;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx 20rpx 5rpx 20rpx;
+}
+
+.button-submit {
+  /* margin-top: 16rpx; */
+  background-color: #88c34a;
+  margin-top: 10rpx;
+}
+
+.must-input-item-tip{
+  text-align: center;
+  color: gray;
+}
+
+.must-input-tip{
+  text-align: right;
+  color: gray;
+  font-size: 25rpx;
+}
+
+.add-panel-btn{
+  flex: 1;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  /* border-radius: 10rpx; */
+  background-color: transparent;
+  color: #88c34a;
+  padding: 10rpx;
+  text-align: center;
+  /* border: 1rpx solid #88c34a; */
+}
+
+.drop-box{
+  position: absolute;
+  margin-top: 90rpx;
+  width: 75%;
+  background-color: whitesmoke;
+  margin-left: 10%;
+  /* margin-right: 10%; */
+  flex-direction: column;
+  /* border: 1rpx solid #ccc; */
+  border-radius: 4rpx;
+  box-shadow: 0 0 10rpx #e0e0e0;
+  font-size: 25rpx;
+  z-index: 999;
+}
+
+.drop-box-item{
+  display: flex;
+  flex-direction: column;
+  padding: 5rpx 15rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.drop-box-item:active{
+  background-color: #e0e0e0;
+}
+
+.drop-box-item:last-child{
+  border-bottom: none;
+}
+
+.cancel-btn{
+  margin-top: 8rpx;
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  left: 92%;
+}

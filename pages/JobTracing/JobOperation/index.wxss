@@ -1,0 +1,109 @@
+/* pages/JobTracing/JobOperation/index.wxss */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    margin: 16rpx;
+    padding: 8rpx 0rpx 0rpx 0rpx;
+    border-radius: 5rpx;
+    background-color: #88c34a;
+    box-shadow: 0 0 5rpx #88c34a;
+}
+
+.item-title {
+    font-size: 42rpx;
+    margin-top: 8rpx;
+    margin-right: 16rpx;
+    margin-left: 16rpx;
+    color: white;
+}
+
+.item-content-txt {
+    margin: 8rpx 16rpx;
+    font-size: 28rpx;
+    color: #e0e0e0;
+}
+
+.item-link {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 8rpx 16rpx 8rpx 16rpx;
+    font-size: 28rpx;
+    color: #88c34a;
+    font-weight: bold;
+    /* text-decoration: underline; */
+}
+
+.item-link2{
+    background-color: white;
+    padding: 4rpx 8rpx;
+    border-radius: 4rpx;
+}
+
+.item-btns-row-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16rpx;
+}
+
+.item-row-btn {
+    color: #88c34a;
+    background-color: white;
+    border-radius: 0rpx;
+    /* box-shadow: 0 0 10rpx #88c34a; */
+    font-size: 32rpx;
+    flex: 1;
+}
+
+.item-row-btn:active {
+    background-color: rgb(240, 240, 240);
+}
+
+.item-row-btn::after {
+    border: none;
+}
+
+.gallery {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 16rpx 16rpx 16rpx 16rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.img-item {
+    position: relative;
+    margin: 5px;
+}
+
+.gallery-label {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 28rpx;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16rpx 16rpx 16rpx 16rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.gallery-items-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

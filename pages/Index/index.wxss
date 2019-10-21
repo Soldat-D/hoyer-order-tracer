@@ -1,0 +1,135 @@
+/* pages/index/index2/index2.wxss */
+page{
+    background: white;
+}
+.weui-grids {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}
+
+.weui-grids:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #d9d9d9;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.weui-grids:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #d9d9d9;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.weui-grid {
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  width: 33.33333333%;
+  box-sizing: border-box;
+}
+
+.weui-grid:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid #d9d9d9;
+  color: #d9d9d9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.weui-grid:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #d9d9d9;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.weui-grid:active {
+  background-color: #ececec;
+}
+
+.weui-grid__bg {
+  position: relative;
+  float: left;
+  padding: 0px 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cu-item:active{
+    background-color: #ececec;
+}
+
+.grid-icon{
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 64rpx;
+}
+
+.weui-grid__icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background-color: #ffc107;
+  border-radius: 32px;
+  padding: 12px 12px;
+}
+
+image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.weui-grid__icon image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.weui-grid__icon + .weui-grid__label {
+  margin-top: 5px;
+}
+
+.weui-grid__label {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: #757575;
+  font-size: 14px;
+  /* height: 40px; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

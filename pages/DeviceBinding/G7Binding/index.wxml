@@ -1,0 +1,54 @@
+<!--pages/DeviceBinding/G7Binding/index.wxml-->
+<view>
+    <include src='/pages/Header/hoyer-header.wxml'></include>
+
+    <view wx:if='{{!showInfoPanel}}'>
+        <view class='no-content' style='height:{{containerHeight}}px'>
+            <image class='icon_large' src='/images/icons/scan.png' bindtap='scanBusinessQRCode'></image>
+            <view class='icon_large_text'>请扫描业务二维码</view>
+        </view>
+    </view>
+    <view class='main-panel' wx:else>
+        <view class='info-panel'>
+            <view class='bu-number'>{{business_number}}</view>
+            <view class='item-row'>
+                <view class='item-title'>产品：</view>
+                <view>{{product}}</view>
+            </view>
+
+            <view class='item-row'>
+                <view class='item-title'>地址：</view>
+                <view>{{address}}</view>
+            </view>
+
+            <view class='item-row'>
+                <view class='item-title'>司机姓名：</view>
+                <view>{{driver_name}}</view>
+            </view>
+
+            <view class='item-row'>
+                <view class='item-title'>司机手机号：</view>
+                <view>{{driver_phone}}</view>
+            </view>
+
+            <view class='item-row'>
+                <view class='item-title'>车牌号：</view>
+                <view>{{plate_no}}</view>
+            </view>
+        </view>
+
+        <view class='rescan-button' bindtap='scanBusinessQRCode'>换个业务</view>
+
+        <view class='g7-info-panel'>
+            <image class='icon-small' src='/images/icons/gps-16.png'></image>
+            <input class='input-wgt' placeholder-class='input-placeholder' placeholder='点击右侧按钮扫描G7设备条形码' bindinput='inputG7Code' value='{{g7_number}}'></input>
+            <image class='icon-small' src='/images/scan.png' bindtap='scanG7Code'></image>
+        </view>
+
+        <view class="forcebind-g7-cb">
+            <icon type="{{forceBinding == 0?'circle':'success'}}" color="#039af4" value="{{forceBinding}}" bindtap="forceBindDevice"></icon>
+            <view style="margin-left:8rpx; ">强制绑定设备</view>
+        </view>
+        <button class='button g7-button' bindtap='bindG7'>绑定G7到业务</button>
+    </view>
+</view>

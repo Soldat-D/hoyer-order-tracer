@@ -1,0 +1,40 @@
+<!--pages/AbnormalReport/index.wxml-->
+<!--pages/exceptions/exceptions.wxml-->
+
+<include src='/pages/Header/hoyer-header.wxml' />
+
+<view class='exce-type-radio-btns'>
+  <!-- 异常类型--大类-->
+  <view wx:for='{{exceptions}}' wx:key='index'>
+    <view class='exce-type-radio-btn' style='background-color:{{item.isSelected?"#ffc107":"#e0e0e0"}}' bindtap='selectBigExceType' data-index='{{index}}'>{{item.name}}</view>
+    
+  </view>
+</view>
+
+<view class="gallery">
+  <view class="img-item" wx:for="{{images}}" wx:key="index">
+    <image style="width:{{imageWidth}}px; height:{{imageWidth}}px" src="{{item}}" bindtap="previewImage" mode="aspectFill" data-index='{{index}}'></image>
+  </view>
+
+  <view class='img-item'>
+    <image style="width: {{imageWidth}}px; height:{{imageWidth}}px" src="/images/icon_add.png" bindtap="chooseImage"></image>
+  </view>
+</view>
+
+<view class="text-container">
+  <!--异常描述-->
+  <textarea class="exce-content" placeholder="此处填写异常情况说明"  bindinput='inputDisc'></textarea>
+  <view class="exception-type">
+    <text class='exce-type-text'>异常类型</text>
+  </view>
+  <view class='exce-type-details'>
+    <!--异常类型标签 具体异常-->
+    <view wx:for='{{exceptions[ei].detail}}' wx:key='index'>
+      <view class='exce-type-detail' style='background-color:{{item.isSelected?"#ffc107":"#e0e0e0"}}' bindtap='selectDetailExceType' data-index='{{index}}'>{{item.name}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="btn-postion">
+  <button class="button submit-btn" bindtap="submit">上传异常信息</button>
+</view>

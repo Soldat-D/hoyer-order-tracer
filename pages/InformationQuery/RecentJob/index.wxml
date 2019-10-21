@@ -1,0 +1,62 @@
+<!--pages/InformationQuery/RecentJob/index.wxml-->
+<!--pages/InformationInquiry/RecentBusiness/RecentBusiness.wxml-->
+<view class='main-container'>
+    <include src='/pages/Header/hoyer-header.wxml'></include>
+    <view class='map-search'>
+        <view class='map-search-row'>
+            <image class='map-search-icon' src='/images/search.png'></image>
+            <input class='map-search-input' placeholder='搜索业务编号、产品、装卸货地址、车队' bindinput='searchJobNo' value='{{searchValue}}'></input>
+            <!-- <view class='map-include-points'>{{markers.length}}</view> -->
+            <icon type='clear' size='28rpx' color='grey' bindtap='cleanKeys' wx:if='{{cleanIconShow}}'></icon>
+        </view>
+    </view>
+
+    <view class='picker-container' style='margin-top:100rpx;'>
+        <view class='picker'>
+            <!-- <view>日期</view> -->
+            <picker mode='date' start='2019-01-01' end='2021-07-01' bindchange='datePickerChange' style='color:#03a9f4; font-weight:bold;'>
+                {{date}}</picker>
+            <!-- <view>{{date}}</view> -->
+        </view>
+        <view class='picker'>
+            <!-- <view>业务完成情况</view> -->
+            <picker mode='selector' value='2' range='{{jobCompSelector}}' bindchange='jobCompPickerChange' style='color:#03a9f4; font-weight:bold;'>
+                {{jobCompleteSelected}}</picker>
+            <!-- <view style='color:#88c34a; font-weight:bold;'>{{jobCompleteSelected}}</view> -->
+        </view>
+        <view class='picker'>
+            <!-- <view>派车情况</view> -->
+            <picker mode='selector' value='2' range='{{truckSelector}}' bindchange='truckPickerChange' style='color:#03a9f4; font-weight:bold;'>
+                {{truckSelected}}</picker>
+            <!-- <view style='color:#ffc107; font-weight:bold;'></view> -->
+        </view>
+    </view>
+
+
+    <scroll-view class='scroll-view' style='height:{{scrollViewHeight}}px;' scroll-y='true' wx:if='{{businessList.length!=0}}'>
+        <view class='item-col' wx:for='{{businessList}}' wx:key='' bindtap='itemSelected' data-index='{{index}}'>
+            <view class='item-row'>
+                <view class='item-title'>{{item.hsb_ref}}</view>
+                <view class='item-info'>
+                    <view class='item-subtitle' style='color:#88c34a;' wx:if='{{item.end_unload.actual_time!=null&&item.end_unload.actual_time.length!=0}}'>已完成</view>
+                    <view class='item-subinfo' wx:else>
+                        <view style='color:{{item.start_load.actual_time == null || item.start_load.actual_time.length == 0?"#f1f1f1":"#88c34a"}};'>●</view>
+                        <view style='color:{{item.end_load.actual_time == null || item.end_load.actual_time.length == 0?"#f1f1f1":"#88c34a"}};'>●</view>
+                        <view style='color:{{item.start_unload.actual_time == null || item.start_unload.actual_time.length == 0?"#f1f1f1":"#88c34a"}};'>●</view>
+                        <view style='color:{{item.end_unload.actual_time == null ||item.end_unload.actual_time.length == 0?"#f1f1f1":"#88c34a"}};'>●</view>
+                    </view>
+                </view>
+                <view class='item-plate' wx:if='{{item.plate_no != null && item.plate_no.length != 0}}'>{{item.plate_no}}</view>
+                <view class='item-subtitle' style='color:red;' wx:elif='{{item.end_unload.actual_time == null || item.end_unload.actual_time.length == 0}}'>未派车</view>
+                <view class='item-subtitle' style='color:#88c34a;' wx:else></view>
+            </view>
+            <view class='item-subtitle'>装货地址：{{item.load_addr}}</view>
+            <view class='item-subtitle'>卸货地址：{{item.unload_addr}}</view>
+            <view class='item-subtitle'>产品：{{item.cargo_name}}</view>
+            <view class='item-subtitle'>车队：{{item.fleet}}</view>
+            <view class='item-subtitle'>装货时间：{{item.start_load.plan_time}}</view>
+            <view class='item-subtitle'>卸货时间：{{item.end_unload.plan_time}}</view>
+        </view>
+    </scroll-view>
+    <view class='no-result-tips' wx:else>没有找到符合该条件的业务</view>
+</view>

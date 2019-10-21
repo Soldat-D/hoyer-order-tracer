@@ -1,0 +1,27 @@
+<!--pages/InformationQuery/GPSInformation/index.wxml-->
+<map id="myMap" class='map' style='height:{{mapDisplayHeight}}px;' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" include-points="{{markers}}" scale='10' show-location>
+
+  <!-- <cover-view class='gps-desc-panel'>
+    <cover-view class='gps-desc-item'>
+      <cover-image class='gps-desc-icon' src='/images/truck-gps.png'></cover-image>
+      <cover-view>车辆GPS</cover-view>
+    </cover-view>
+    <cover-view class='gps-desc-item'>
+      <cover-image class='gps-desc-icon' src='/images/savvy-gps.png'></cover-image>
+      <cover-view>SAVVY GPS</cover-view>
+    </cover-view>
+    <cover-view class='gps-desc-item'>
+      <cover-image class='gps-desc-icon' src='/images/g7-gps.png'></cover-image>
+      <cover-view>G7</cover-view>
+    </cover-view>
+  </cover-view> -->
+
+</map>
+
+<view class='map-search'>
+  <view class='map-search-row'>
+    <image class='map-search-icon' src='/images/search.png'></image>
+    <input class='map-search-input' placeholder='搜索业务、车队、车牌、设备编号' bindinput='searchGPSDevice'></input>
+    <view class='map-include-points'>{{markers.length}}</view>
+  </view>
+</view>
